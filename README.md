@@ -6,7 +6,7 @@ news.sh is a  bash script replacement for sysnews, written for FreeBSD but easil
   
   File ending .txt is stripped and underscore is replaced with whitespace to create the title of the news item.
   
-  When a news item has been read the script creates $DIRNEWSHOMEDIR<newsitem_name>.read
+  When a news item has been read the script creates $DIRNEWSHOMEDIR&lt;newsitem_name&gt;.read
   
   $DIRNEWSDIR should have mode 1777 set to allow any user to create news, but prohibit deletion of other users' news.
   
@@ -24,8 +24,8 @@ OPTIONS:
 
   -all: Read all news even if already read
   
-  -clean: Remove (all) files in /home/dir-admins/mahriman/.dirnews/ that mark news as read
+  -clean: Remove (all) files in $DIRNEWSHOMEDIR that mark news as read
   
-  -user <username>: Read all news written by <username>
+  -user <username>: Read all news written by &lt;username&gt;
   
   -help: This help
