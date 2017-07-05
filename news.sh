@@ -1,9 +1,10 @@
 #!/usr/local/bin/bash
 
 SCRIPTNAME="news.sh"
-SCRIPTVERSION="1.2"
+SCRIPTVERSION="1.3"
 # Author: mahriman <mahriman@direktoratet.se>
 # Revisions:
+#   1.3 Changed news date to correspond to birth of inode rather than last modified. // 2017-04-16
 #   1.2 Added an option to view specific user's news and better argument control. // 2017-04-10
 #   1.1 Translated to English, better error checking and other improvements. // 2017-04-10
 #   1.0 Base version // 2017-04-09
@@ -90,7 +91,7 @@ do
             continue
         fi
         NEWSITEMNAME=$(echo $newsitem|sed 's/\.txt$//g'|sed 's/_/ /g')
-        NEWSDATE=$(stat -f %Sm -t %F $DIRNEWSDIR$newsitem) 
+        NEWSDATE=$(stat -f %SB -t %F $DIRNEWSDIR$newsitem) 
         if [[ $NEWSCOUNT != "0" ]]; then
             echo "- - -"
         fi
